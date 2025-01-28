@@ -34,7 +34,7 @@ int main() {
     std::string enteredUsername, enteredPassword;
 
     while (true) {
-        std::cout << "\nLogin\n";
+        std::cout << "Login: " << std::endl;
         std::cout << "Enter username: ";
         std::getline(std::cin, enteredUsername);
 
