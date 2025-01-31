@@ -80,10 +80,76 @@ It would compile but not run
 - Is there a memory leak or dangling pointer?
 None
 
+## Question 5
 
+```cpp
+int a = 5;
+int* p = &a;
+p = nullptr;
+*p = 10;
+```
 
+**Questions**:
 
+- What will be the output?
+None it will crash
+- Will this run/compile?
+It will compile but not run
+- Is there a memory leak or dangling pointer?
+None
 
+## Question 6
+
+```cpp
+int* p = new int(5);
+int* q = p;
+delete p;
+```
+
+**Questions**:
+
+- What will be the output?
+None
+- Will this run/compile?
+Yes
+- Is there a memory leak or dangling pointer?
+No memory leak but q is a dangling pointer
+
+## Question 7
+
+```cpp
+int* p = new int(5);
+p = new int(10);
+```
+
+**Questions**:
+
+- What will be the output?
+None not std cout
+- Will this run/compile?
+Yes
+- Is there a memory leak or dangling pointer?
+Yes memory leak because new int(5) was never deleted but no dangling pointer
+
+Question  8
+void func(int* p) {
+    *p = 10;
+}
+
+int main() {
+    int a = 5;
+    func(&a);
+    std::cout << a;
+}
+
+**Questions**:
+
+- What will be the output?
+10
+- Will this run/compile?
+Yes to both
+- Is there a memory leak or dangling pointer?
+None
 
 
 
